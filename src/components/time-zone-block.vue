@@ -58,7 +58,6 @@ export default defineComponent({
     const cityTimeZone = computed(
       () => timeZone0.value + props.zone * hourMillisecond
     );
-    console.log(cityTimeZone.value);
     const yaer = computed(() => new Date(cityTimeZone.value).getFullYear());
     const month = computed(
       () => months[new Date(cityTimeZone.value).getMonth()]
@@ -68,7 +67,6 @@ export default defineComponent({
     const minute = computed(() => new Date(cityTimeZone.value).getMinutes());
 
     setInterval(() => {
-      console.log("test");
       date.value = new Date();
     }, 5 * millisecond);
 
